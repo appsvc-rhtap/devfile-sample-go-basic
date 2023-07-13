@@ -19,9 +19,9 @@ parent:
 components:
   - name: image-build
     image:
-      imageName: go-image:latest
+      imageName: quay.io/appsvcrhtap/goapp:latest
       dockerfile:
-        uri: docker/Dockerfile
+        uri: Dockerfile
         buildContext: .
         rootRequired: false
   - name: kubernetes-deploy

@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: my-go
-          image: go-image:latest
+          image: quay.io/appsvcrhtap/goapp:latest
           ports:
             - name: http
               containerPort: 8081
