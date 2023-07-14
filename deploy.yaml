@@ -36,3 +36,26 @@ ports:
     targetPort: 8081
 selector:
   app: go-app
+---
+apiVersion: primaza.io/v1alpha1
+kind: ServiceClaim
+metadata:
+  name: my-app-dummy-for-appns
+spec:
+  serviceClassIdentity:
+  - name: type
+    value: dummy
+  - name: scope
+    value: claim-for-appns
+  serviceEndpointDefinitionKeys:
+  - url
+  - password
+  applicationClusterContext:
+    clusterEnvironmentName: worker
+    namespace: applications
+  application:
+    kind: Deployment
+    apiVersion: apps/v1
+    selector:
+      matchLabels:
+        app: go-app
