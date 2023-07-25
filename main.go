@@ -12,7 +12,7 @@ func main() {
 	if port == "" {
 		port = "8080"
 	}
-	fmt.Println("Dummychange")
+	fmt.Println("Dummychanges")
 	http.HandleFunc("/", HelloServer)
 	http.ListenAndServe(fmt.Sprintf("0.0.0.0:%s", port), nil)
 }
